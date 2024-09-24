@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+<!--     Header text for Available Bluetooth Devices-->
+<!--    <TextView-->
+<!--        android:id="@+id/headerTextView"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="102dp"-->
+<!--        android:layout_marginBottom="32dp"-->
+<!--        android:gravity="center"-->
+<!--        android:text="Available Bluetooth Devices"-->
+<!--        android:textSize="26sp"-->
+<!--        android:textStyle="bold" /> &lt;!&ndash; Space below the header &ndash;&gt;-->
+
+    <!-- ListView for displaying Bluetooth devices -->
+    <ListView
+        android:id="@+id/bluetoothDevicesListView"
+        android:layout_width="match_parent"
+        android:layout_height="548dp"
+        android:divider="@android:color/holo_blue_dark"
+        android:dividerHeight="2dp" /> <!-- Increased text size for Bluetooth names -->
+
+    <!-- Layout that becomes visible after connection -->
+    <LinearLayout
+        android:id="@+id/connectedLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:visibility="gone"> <!-- Initially hidden -->
+
+        <TextView
+            android:id="@+id/receivedTextView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="Waiting for text..."
+            android:textSize="38sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Pitch Control"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/holo_purple"/>
+
+        <!-- SeekBars for pitch and speed control -->
+        <SeekBar
+            android:id="@+id/pitchSeekBar"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:max="100"
+            android:progress="50" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Speed Control"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/holo_purple"/>
+
+        <SeekBar
+            android:id="@+id/speedSeekBar"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:max="100"
+            android:progress="50" />
+    </LinearLayout>
+
+    <!-- Footer text for app developer name -->
+    <TextView
+        android:id="@+id/developerTextView"
+        android:layout_width="match_parent"
+        android:layout_height="81dp"
+        android:layout_marginTop="16dp"
+        android:background="@android:color/holo_blue_light"
+        android:fontFamily="monospace"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="This App is Developed by\nTasmia Chowdhury ALIF"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        android:textStyle="italic|bold" />
+</LinearLayout>
